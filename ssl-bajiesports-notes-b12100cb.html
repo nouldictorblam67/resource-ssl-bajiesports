@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>八戒体育 · 快速了解站点用途</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fa;
+      color: #1e2a3a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- 导航栏 ----- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #fcb92c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #dce1e9;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #fcb92c;
+    }
+
+    /* ----- 深色头图 hero ----- */
+    .hero {
+      background: linear-gradient(145deg, #0f1a2e 0%, #1b2940 100%);
+      padding: 60px 0 64px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+    }
+
+    .hero-text {
+      flex: 1 1 400px;
+    }
+
+    .hero-text h1 {
+      color: #ffffff;
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    .hero-text h1 i {
+      color: #fcb92c;
+      font-style: normal;
+    }
+
+    .hero-text p {
+      color: #bcc6d6;
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+      max-width: 520px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .stat-item {
+      color: #e4e9f2;
+      border-left: 2px solid #fcb92c;
+      padding-left: 14px;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .stat-item small {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    /* ----- 浅色正文区 ----- */
+    .section-light {
+      background: #ffffff;
+      padding: 56px 0 48px;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 32px;
+      color: #0f1a2e;
+    }
+
+    .section-title em {
+      color: #c97d2d;
+      font-style: normal;
+    }
+
+    .desc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .desc-card {
+      background: #f8fafd;
+      border-radius: 16px;
+      padding: 24px 22px;
+      transition: box-shadow 0.2s;
+    }
+
+    .desc-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .desc-card h3 span {
+      background: #fcb92c;
+      color: #0f1a2e;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0 10px;
+      border-radius: 20px;
+      line-height: 1.6;
+    }
+
+    .desc-card p {
+      color: #3d4e66;
+      font-size: 0.96rem;
+    }
+
+    .accent-link {
+      color: #c97d2d;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px dashed #c97d2d;
+      transition: border 0.15s;
+    }
+
+    .accent-link:hover {
+      border-bottom: 1px solid #c97d2d;
+    }
+
+    /* ----- 三个场景模块 ----- */
+    .scene-section {
+      background: #f0f3f8;
+      padding: 56px 0 60px;
+    }
+
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    @media (max-width: 780px) {
+      .scene-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 28px 22px 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e6ecf3;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .scene-card:hover {
+      border-color: #fcb92c;
+      transform: translateY(-3px);
+    }
+
+    .scene-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .scene-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .scene-card p {
+      color: #3d4e66;
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eef3f9;
+      color: #1f3a57;
+      font-size: 0.75rem;
+      padding: 3px 12px;
+      border-radius: 30px;
+      margin-top: 14px;
+      font-weight: 500;
+    }
+
+    /* ----- 常见说明 (FAQ 摘要) ----- */
+    .faq-summary {
+      padding: 44px 0 50px;
+    }
+
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: #f8fafd;
+      border-radius: 14px;
+      padding: 18px 24px;
+      border-left: 4px solid #fcb92c;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: #0f1a2e;
+    }
+
+    .faq-item p {
+      color: #4a5e79;
+      font-size: 0.93rem;
+    }
+
+    .faq-item a {
+      color: #c97d2d;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .footnote {
+      text-align: center;
+      margin-top: 32px;
+      color: #66788f;
+      font-size: 0.9rem;
+    }
+
+    /* ----- footer ----- */
+    .footer {
+      background: #0f1a2e;
+      color: #9dafc6;
+      padding: 28px 0;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+      .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .nav-links {
+        gap: 20px;
+      }
+      .stat-item strong {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <div class="hero">
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">⚡ 八戒<span>体育</span></div>
+        <ul class="nav-links">
+          <li><a href="#intro">概况</a></li>
+          <li><a href="#scenes">场景</a></li>
+          <li><a href="#faq">说明</a></li>
+        </ul>
+      </nav>
+
+      <!-- hero 核心介绍 -->
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>识别平台用途<br>用 <i>八戒体育</i> 快速定位</h1>
+          <p>面向希望直接了解网站功能与适用范围的用户，用简洁模块拆解服务逻辑。无需繁琐摸索，一页看清内容边界。</p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>3</strong>
+              <small>核心场景</small>
+            </div>
+            <div class="stat-item">
+              <strong>6</strong>
+              <small>常见说明条目</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 浅色正文区：介绍与特点 -->
+  <div class="section-light" id="intro">
+    <div class="container">
+      <h2 class="section-title">关于 <em>八戒体育</em> 的用途识别</h2>
+      <div class="desc-grid">
+        <div class="desc-card">
+          <h3>📋 功能定位 <span>速览</span></h3>
+          <p>平台围绕体育信息与相关服务组织内容，提供赛事动态、数据参考及用户互动模块。适合订阅资讯、查看统计或参与讨论。</p>
+        </div>
+        <div class="desc-card">
+          <h3>⚙️ 使用特点</h3>
+          <p>无需注册即可浏览大部分公开板块，界面分区明确，搜索与筛选响应快。移动端适配良好，适合碎片化查阅。</p>
+        </div>
+        <div class="desc-card">
+          <h3>🔍 适用人群</h3>
+          <p>日常关注体育赛事、需要快速查找比分或赛程的普通用户；也适合内容创作者获取素材线索。</p>
+        </div>
+      </div>
+      <p style="margin-top: 28px; font-size: 1rem; color: #3d5a7a;">
+        若想直接体验，可前往 
+        <a href="https://ssl-bajiesports.com" class="accent-link">八戒体育</a> 
+        查看实时板块与频道分类。页面结构以实用为导向，不包含夸大引导。
+      </p>
+    </div>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <div class="scene-section" id="scenes">
+    <div class="container">
+      <h2 class="section-title">常见使用场景</h2>
+      <div class="scene-grid">
+        <div class="scene-card">
+          <div class="scene-icon">🏆</div>
+          <h4>赛事追踪</h4>
+          <p>按联赛、日期或队伍浏览比赛结果与预告。列表视图包含关键事件、阵容与实时状态，适合快速复盘。</p>
+          <span class="tag">数据更新频繁</span>
+        </div>
+        <div class="scene-card">
+          <div class="scene-icon">📊</div>
+          <h4>统计查询</h4>
+          <p>球队及选手的赛季统计、交手记录、近期走势。可基于指标筛选，辅助分析或内容引用。</p>
+          <span class="tag">多维度筛选</span>
+        </div>
+        <div class="scene-card">
+          <div class="scene-icon">💬</div>
+          <h4>社区讨论</h4>
+          <p>赛事话题下的用户回帖与观点汇总，按热度或时间排序。提供举报与屏蔽机制，环境相对有序。</p>
+          <span class="tag">需登录发言</span>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 32px; color: #4f6d8a;">
+        以上场景均可在 
+        <a href="https://ssl-bajiesports.com" class="accent-link">八戒体育</a> 
+        直接使用，无需额外插件。
+      </p>
+    </div>
+  </div>
+
+  <!-- 常见说明（FAQ 摘要） -->
+  <div class="faq-summary container" id="faq">
+    <h2 class="section-title">常见说明</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <strong>· 是否需要下载客户端？</strong>
+        <p>纯网页应用，主流浏览器直接打开即可。移动端建议使用 Chrome 或 Safari 获得最佳显示。</p>
+      </div>
+      <div class="faq-item">
+        <strong>· 数据来源与更新节奏</strong>
+        <p>主要基于公开赛事信息与官方接口，关键比赛日数据每分钟刷新。延迟通常不超过 3 分钟。</p>
+      </div>
+      <div class="faq-item">
+        <strong>· 账号与隐私说明</strong>
+        <p>发言与收藏功能需要注册，邮箱验证即可。浏览行为不对外公开，详细见平台隐私条款。</p>
+      </div>
+      <div class="faq-item">
+        <strong>· 内容规范与反馈</strong>
+        <p>用户发布内容需遵守社区准则，违规内容可通过报告入口提交。管理团队会在工作日内处理。</p>
+      </div>
+      <div class="faq-item">
+        <strong>· 八戒体育 与第三方服务的关系</strong>
+        <p>平台独立运营，不关联任何博彩或非法渠道。所有链接与跳转均经过审核，确保指向合法内容。</p>
+      </div>
+    </div>
+    <div class="footnote">
+      * 如需详细了解某一条，请直接在 <a href="https://ssl-bajiesports.com" class="accent-link">八戒体育</a> 的帮助中心搜索关键词。
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <p>本页面仅为用途介绍，所有功能以 <a href="https://ssl-bajiesports.com" style="color: #fcb92c; text-decoration: none;">八戒体育</a> 实际版本为准。</p>
+      <p style="margin-top: 6px;">© 2025 · 简洁信息页</p>
+    </div>
+  </div>
+
+</body>
+</html>
